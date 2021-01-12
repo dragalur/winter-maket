@@ -1,0 +1,265 @@
+/** @format */
+body {
+  background-color: #237e1b;
+}
+
+.header {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+}
+
+nav {
+  text-align: center;
+  padding-top: 10px;
+  gap: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.849);
+  padding: 0 15px;
+  border: 1px solid transparent;
+}
+
+nav a:hover {
+  color: #ffe600;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.menu {
+  width: 20%;
+  height: 575px;
+  position: fixed;
+  left: 0;
+  top: 50px;
+  background-color: #090b10;
+  z-index: 9;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.menu__active {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.menu__buttons {
+  width: 100%;
+  height: 60px;
+  border-bottom: 2px solid #bebebe;
+  cursor: pointer;
+}
+
+.menu__buttons p {
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  font-size: 20px;
+}
+
+.menu__buttons:hover {
+  background-color: #2a344d;
+}
+
+.menu__buttons_hover {
+  background-color: #2a344d;
+}
+
+.menu__button__select {
+  background-color: rgba(159, 194, 5, 0.822);
+  cursor: pointer;
+}
+
+.button-open-bloc {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  bottom: 0;
+  right: 0;
+  max-width: 35px;
+  max-height: 35px;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 30px;
+  height: 4px;
+  background-color: #cccccc;
+  margin: 6px 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.button-open__change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-7px, 6px);
+  transform: rotate(-45deg) translate(-7px, 6px);
+}
+
+.button-open__change .bar2 {
+  opacity: 0;
+}
+
+.button-open__change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 500px;
+}
+
+.content {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: relative;
+  width: 100%;
+  -webkit-transition: 1s;
+  transition: 1s;
+  text-align: center;
+  color: black;
+  display: none;
+}
+
+.contents__active {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  width: 80%;
+  -webkit-transform: translateX(20%);
+          transform: translateX(20%);
+}
+
+.contents p {
+  padding: 15px 0 10px 0;
+  font-size: 30px;
+}
+
+/** slider */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.slider {
+  width: 850px;
+  height: 500px;
+  position: relative;
+  top: 20px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+}
+
+.slide-item {
+  min-height: 100%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.slider-arrow-left,
+.slider-arrow-right {
+  height: 100%;
+  width: 50px;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  opacity: 0.6;
+  z-index: 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.slider-arrow-left {
+  left: 0;
+}
+
+.arrow-right,
+.arrow-left {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  -webkit-box-shadow: -2px 2px 0 black;
+          box-shadow: -2px 2px 0 black;
+}
+
+.arrow-left {
+  left: 20px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.slider-arrow-right {
+  right: 0;
+}
+
+.arrow-right {
+  right: 20px;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+.slider-arrow-right:hover,
+.slider-arrow-left:hover {
+  opacity: 1;
+  background-color: rgba(141, 139, 139, 0.377);
+}
+
+.slider-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.slider-dots .dots {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.slider-dots .dots:hover {
+  background-color: rgba(131, 131, 131, 0.781);
+}
+
+.dots-notActive {
+  background-color: rgba(0, 0, 0, 0.781);
+  border: 1px solid transparent;
+}
+
+.dots-active {
+  background-color: rgba(173, 173, 173, 0.781);
+  border: 1px solid #fff;
+}
+/*# sourceMappingURL=style.css.map */

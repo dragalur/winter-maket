@@ -1,0 +1,224 @@
+/** @format */
+
+@mixin size($wid, $hei) {
+   width: $wid;
+   height: $hei;
+}
+@mixin absolut($top, $left, $bottom, $right) {
+   position: absolute;
+   top: $top;
+   left: $left;
+   bottom: $bottom;
+   right: $right;
+}
+body {
+   background-color: rgb(35, 126, 27);
+}
+.header {
+   @include size(100%, 50px);
+   background-color: black;
+}
+
+nav {
+   text-align: center;
+   padding-top: 10px;
+   gap: 15px;
+}
+nav a {
+   text-decoration: none;
+   font-size: 24px;
+   font-weight: bold;
+   color: rgba(255, 255, 255, 0.849);
+   padding: 0 15px;
+   border: 1px solid transparent;
+}
+nav a:hover {
+   color: rgb(255, 230, 0);
+   border: 1px solid rgb(255, 255, 255);
+   border-radius: 50%;
+}
+.menu {
+   @include size(20%, 600px-25);
+   position: fixed;
+   left: 0;
+   top: 50px;
+   background-color: rgb(9, 11, 16);
+   z-index: 9;
+   transition: 0.5s;
+   transform: translateX(-100%);
+}
+.menu__active {
+   transform: translateX(0%);
+}
+
+.menu__buttons {
+   @include size(100%, 60px);
+   border-bottom: 2px solid rgb(190, 190, 190);
+   cursor: pointer;
+   p {
+      text-align: center;
+      line-height: 50px;
+      color: white;
+      font-size: 20px;
+   }
+}
+.menu__buttons:hover {
+   background-color: rgb(42, 52, 77);
+}
+
+.menu__buttons_hover {
+   background-color: rgb(42, 52, 77);
+}
+
+.menu__button__select {
+   background-color: rgba(159, 194, 5, 0.822);
+   cursor: pointer;
+}
+.button-open-bloc {
+   display: inline-block;
+   cursor: pointer;
+   @include absolut(7px, 7px, 0, 0);
+   max-width: 35px;
+   max-height: 35px;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+   width: 30px;
+   height: 4px;
+   background-color: rgb(204, 204, 204);
+   margin: 6px 0;
+   transition: 0.4s;
+}
+
+.button-open__change .bar1 {
+   -webkit-transform: rotate(-45deg) translate(-7px, 6px);
+   transform: rotate(-45deg) translate(-7px, 6px);
+}
+
+.button-open__change .bar2 {
+   opacity: 0;
+}
+
+.button-open__change .bar3 {
+   -webkit-transform: rotate(45deg) translate(-8px, -8px);
+   transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.content img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 400px;
+   height: 500px;
+}
+.content {
+   transition: 0.5s;
+   position: relative;
+   width: 100%;
+   transition: 1s;
+   text-align: center;
+   color: rgb(0, 0, 0);
+   display: none;
+}
+.contents__active {
+   transition: 0.5s;
+   width: 80%;
+   transform: translateX(20%);
+}
+.contents p {
+   padding: 15px 0 10px 0;
+   font-size: 30px;
+}
+
+/** slider */
+
+* {
+   margin: 0;
+   padding: 0;
+}
+.slider {
+   width: 850px;
+   height: 500px;
+   position: relative;
+   top: 20px;
+   margin: auto;
+   overflow: hidden;
+}
+.slider-list {
+   display: flex;
+   transition: 0.8s;
+}
+.slide-item {
+   min-height: 100%;
+}
+img {
+   width: 100%;
+   height: 100%;
+}
+
+.slider-arrow-left,
+.slider-arrow-right {
+   height: 100%;
+   width: 50px;
+   position: absolute;
+   top: 0;
+   cursor: pointer;
+   opacity: 0.6;
+   z-index: 4;
+   display: flex;
+   align-items: center;
+}
+.slider-arrow-left {
+   left: 0;
+}
+.arrow-right,
+.arrow-left {
+   width: 50px;
+   height: 50px;
+   position: relative;
+   box-shadow: -2px 2px 0 black;
+}
+.arrow-left {
+   left: 20px;
+   transform: rotate(45deg);
+}
+.slider-arrow-right {
+   right: 0;
+}
+.arrow-right {
+   right: 20px;
+   transform: rotate(-135deg);
+}
+.slider-arrow-right:hover,
+.slider-arrow-left:hover {
+   opacity: 1;
+   background-color: rgba(141, 139, 139, 0.377);
+}
+.slider-dots {
+   display: flex;
+   position: absolute;
+   bottom: 10px;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+.slider-dots .dots {
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   margin: 0 10px;
+   cursor: pointer;
+}
+.slider-dots .dots:hover {
+   background-color: rgba(131, 131, 131, 0.781);
+}
+
+.dots-notActive {
+   background-color: rgba(0, 0, 0, 0.781);
+   border: 1px solid transparent;
+}
+.dots-active {
+   background-color: rgba(173, 173, 173, 0.781);
+   border: 1px solid #fff;
+}

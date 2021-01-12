@@ -1,0 +1,101 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style/style.css" />
+      <title>Document</title>
+   </head>
+
+   <body>
+      <div class="wrapper" id="wrapper">
+         <div class="header">
+            <div class="button-open-bloc" id="button-open-bloc">
+               <div class="bar1"></div>
+               <div class="bar2"></div>
+               <div class="bar3"></div>
+            </div>
+            <div class="menu" id="menu">
+               <div class="menu__buttons" id="menu__buttons">
+                  <p>Black trees</p>
+               </div>
+               <div class="menu__buttons" id="menu__buttons">
+                  <p>House trees</p>
+               </div>
+               <div class="menu__buttons" id="menu__buttons">
+                  <p>Picsel trees</p>
+               </div>
+               <div class="menu__buttons" id="menu__buttons">
+                  <p>Usually trees</p>
+               </div>
+               <div class="menu__buttons" id="menu__buttons">
+                  <p>Trees in snow</p>
+               </div>
+            </div>
+
+            <nav>
+               <a href="index.html">Home</a>
+               <a href="slider.html">Slider</a>
+            </nav>
+         </div>
+         <div class="contents" id="contents">
+            <div class="content" id="content">
+               <p>Black trees</p>
+               <img src="image/black.jpg" alt="" />
+            </div>
+            <div class="content" id="content">
+               <p>House trees</p>
+               <img src="image/inHouse.jpg" alt="" />
+            </div>
+            <div class="content" id="content">
+               <p>Picsel trees</p>
+               <img src="image/picsel.jpg" alt="" />
+            </div>
+            <div class="content" id="content">
+               <p>Usually trees</p>
+               <img src="image/usually.jpg" alt="" />
+            </div>
+            <div class="content" id="content">
+               <p>Trees in snow</p>
+               <img src="image/withSnow.jpg" alt="" />
+            </div>
+         </div>
+      </div>
+      <script>
+         //data  button open menu
+         const menuButton = document.getElementById("button-open-bloc");
+         const menu = document.getElementById("menu");
+         const wraper = document.getElementById("contents");
+         //function for button open menu
+         menuButton.addEventListener("click", function () {
+            menuButton.classList.toggle("button-open__change");
+            wraper.classList.toggle("contents__active");
+            menu.classList.toggle("menu__active");
+         });
+
+         //data menu-buttons
+         const contentButton = document.querySelectorAll("#menu__buttons");
+         const contentBloc = document.getElementsByClassName("content");
+
+         contentBloc[0].style.display = "block";
+         let contentNow = contentBloc[0];
+
+         contentButton[0].style.backgroundColor = "rgba(159, 194, 5, 0.822)";
+         let buttonNow = contentButton[0];
+         for (let i = 0; i < contentButton.length; i++) {
+            contentButton[i].addEventListener("click", function () {
+               contentNow.style.display = "none";
+               contentBloc[i].style.display = "block";
+               contentNow = contentBloc[i];
+
+               buttonNow.style.backgroundColor = "rgb(9, 11, 16)";
+               contentButton[i].style.backgroundColor =
+                  "rgba(159, 194, 5, 0.822)";
+               buttonNow = contentButton[i];
+            });
+         }
+      </script>
+   </body>
+</html>
