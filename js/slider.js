@@ -69,9 +69,7 @@ const dots = (i) => {
 
 var sliderTimer = setInterval(scroll, 2000);
 
-//functions stop and start timer when pointer on elements 1213131
-//fdgdfgdgdg
-//wgwrgwrgwrgw
+//functions stop and start timer when pointer on elements
 let chec = true;
 slider.onpointerover = (event) => {
    clearTimeout(sliderTimer);
